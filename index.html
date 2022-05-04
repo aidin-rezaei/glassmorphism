@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="all.min.css">
+    <script src="all.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <div class="boxclose">
+            <div></div>
+        </div>
+        <div class="titlebox">
+            <img class="logo" src="Netflix.svg" alt="">
+            <div class="mune">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+        <div class="hrbox"></div>
+        <div class="boxmune">
+            <p class="textmune">mune</p>
+            <div class="listmune">
+                <div class="active-marker">
+                    <div class="marker" id="marker"></div>
+                </div>
+                <div class="list" id="list">
+                    <div class="itmemune active">
+                        <div>
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <p>Browser</p>
+                        <div class="badge"><i class="fa fa-angle-right"></i></div>
+                    </div>
+                    <div class="itmemune">
+                        <div>
+                            <i class="far fa-calendar"></i>
+                        </div>
+                        <p>Watchlist</p>
+                        <div class="badge"></div>
+                    </div>
+                    <div class="itmemune">
+                        <div>
+                            <i class="fa fa-user-group"></i>
+                        </div>
+                        <p>Friends</p>
+                        <div class="badge"></div>
+                    </div>
+                    <div class="itmemune">
+                        <div>
+                            <i class="fa-regular fa-bell"></i>
+                        </div>
+                        <p>Notifications</p>
+                        <div class="badge show">3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hrbox2"></div>
+        <div class="boxmune">
+            <p class="textmune">category</p>
+            <div class="listmune">
+                <div class="list" id="list">
+                    <div class="itmemune active">
+                        <div>
+                            <i class="fa fa-tv"></i>
+                        </div>
+                        <p>TV-Shows</p>
+                        <div class="badge"></div>
+                    </div>
+                    <div class="itmemune">
+                        <div>
+                            <i class="fa fa-video"></i>
+                        </div>
+                        <p>Movies</p>
+                        <div class="badge"></div>
+                    </div>
+                    <div class="itmemune">
+                        <div>
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <p>Games</p>
+                        <div class="badge"> new</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hrbox2"></div>
+        <div class="boxmune">
+            <p class="textmune">general</p>
+            <div class="listmune">
+                <div class="list" id="list">
+                    <div class="itmemune active">
+                        <div>
+                            <i class="fa fa-gear"></i>
+                        </div>
+                        <p>Settings</p>
+                        <div class="badge"></div>
+                    </div>
+                    <div class="itmemune">
+                        <div>
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </div>
+                        <p>Log Out</p>
+                        <div class="badge"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hrbox2"></div>
+        <div class="boxmune">
+            <div class="profile">
+                <img src="avatar.jpg" alt="">
+                <div class="acc">
+                    <p>Kailash</p>
+                    <p class="po">Restricted Account</p>
+                </div>
+                <div class="badge"><i class="fa fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const listMune = Array.from(document.querySelectorAll('.itmemune'))
+    listMune.forEach((active, id) => {
+        active.addEventListener('click', () => {
+                let setid = id
+                if(id >= 4)setid++
+                if(id >= 7)setid++
+                document.getElementById("marker").style.margin = 'calc(35px*' + setid + ') 0';
+        })
+    })
+</script>
+
+</html>
