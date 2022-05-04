@@ -30,6 +30,7 @@ html, body {
 .content {
     width: 250px;
     background: rgba(118, 118, 118, 0.129);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.349), 1px 1px 2px rgba(0, 0, 0, 0.349),
@@ -37,6 +38,18 @@ html, body {
     /* border: 50px solid transparent; */
     overflow: hidden;
     padding: 25px 25px;
+}
+
+@supports (backdrop-filter: none) {
+	.content {
+		backdrop-filter: blur(10px);
+	}
+}
+
+@supports not (backdrop-filter: none) {
+  .content {
+    background: rgba(55, 55, 55, 0.742);
+  }
 }
 
 .boxclose div {
@@ -222,4 +235,3 @@ html, body {
     padding: 5px;
     padding-top: 15px;
 }
-
